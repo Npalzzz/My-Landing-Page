@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Azka Naufal — Portfolio</title>
+  <title>Azka Naufal — Portofolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
@@ -32,7 +32,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
@@ -55,7 +54,7 @@
     }
     .nav-links a:hover { color: var(--cyan); }
 
-    /* ── HERO ── */
+    
     #hero {
       min-height: 100vh;
       display: flex; align-items: center;
@@ -152,7 +151,7 @@
       transform: translateY(-2px);
     }
 
-    /* ── SECTIONS ── */
+    
     section { padding: 6rem 5vw; }
     .section-label {
       font-family: 'JetBrains Mono', monospace;
@@ -171,7 +170,7 @@
       margin-bottom: 3.5rem; line-height: 1.7;
     }
 
-    /* ── ABOUT ── */
+   
     #about { background: var(--bg2); }
     .about-grid {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -211,7 +210,7 @@
       color: var(--cyan);
     }
 
-    /* ── STACKS ── */
+    
     #stacks { background: var(--bg); }
     .stacks-grid {
       display: grid;
@@ -249,7 +248,7 @@
       transition: width 1s ease;
     }
 
-    /* ── PROJECTS ── */
+    
     #projects { background: var(--bg2); }
     .projects-grid {
       display: grid;
@@ -296,7 +295,7 @@
     }
     .project-error { color: var(--muted); text-align: center; grid-column: 1/-1; padding: 2rem; }
 
-    /* ── CONTACT ── */
+   
     #contact { background: var(--bg); }
     .contact-wrapper { max-width: 640px; }
     
@@ -355,7 +354,7 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* ── FOOTER ── */
+    
     footer {
       background: var(--bg2);
       border-top: 1px solid var(--border);
@@ -368,7 +367,7 @@
     .footer-links a { color: var(--muted); font-size: .82rem; text-decoration: none; transition: color .2s; }
     .footer-links a:hover { color: var(--cyan); }
 
-    /* ── SCROLL REVEAL ── */
+  
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s, transform .6s; }
     .reveal.visible { opacity: 1; transform: none; }
 
@@ -422,19 +421,19 @@
     <div class="about-grid">
       <div class="about-avatar-wrap">
         <div class="about-avatar">
-          <img src="Pictures/Big Boss Smoking.jpg" alt="Azka's profile picture" />
+          <img src="https://i.pinimg.com/736x/41/4b/40/414b405f8abf4b56f31e6b69fbf60265.jpg" alt="Azka's profile picture" />
         </div>
       </div>
       <div class="about-info">
         <div class="section-label">About Me</div>
-        <h2>Azka Naufal Aleeswa Athallah</h2>
+        <h2>My Name Is Azka Naufal Aleeswa Athallah</h2>
         <p>
-          17 tahun, siswa <strong>SMKN 8 Semarang</strong>. Aku passionate di dunia programming,
-          dari bikin tampilan web yang kece sampai ngulik logika di balik layar.
+          17 tahun, Saya Adalah Siswa Kelas 12 Bersekolah di <strong>SMKN 8 Semarang</strong>. Saya adalah Orang yang passionate di dunia programming,
+          terutama di Bagian Front End dari bikin tampilan web sampai ngulik logika di balik layar. Saya menguasai beberapa bahasa pemrogramman, seperti HTML, CSS, JavaScript, dan python. 
         </p>
         <p>
-          Di luar coding, aku suka eksplorasi teknologi baru, belajar hal-hal yang ga ada di kurikulum,
-          dan percaya bahwa umur bukan halangan buat bikin sesuatu yang berguna.
+          Di luar coding, saya suka eksplorasi teknologi baru, belajar hal-hal yang tidak ada di kurikulum,
+          dan saya percaya bahwa umur bukan halangan buat bikin sesuatu yang berguna.
         </p>
         <div class="about-tags">
           <span class="tag">🎓 SMKN 8 Semarang</span>
@@ -509,7 +508,7 @@
 </footer>
 
 <script>
-  /* ── TYPEWRITER ── */
+  
   const phrases = [
     'Front-end Developer 🎨',
     'SMK Student & Self-learner 📚',
@@ -534,7 +533,7 @@
   }
   type();
 
-  /* ── STACKS ── */
+ 
   const stacks = [
     { name: 'HTML',   icon: '🌐', level: 85, color: '#e34c26' },
     { name: 'CSS',    icon: '🎨', level: 80, color: '#264de4' },
@@ -570,13 +569,13 @@
       + '</a>';
   }).join('');
 
-  /* ── SCROLL REVEAL ── */
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
   }, { threshold: .12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  /* ── SKILL BAR ANIMATE ── */
+  
   const barObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
