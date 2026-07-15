@@ -32,6 +32,7 @@
       overflow-x: hidden;
     }
 
+    
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
@@ -151,7 +152,7 @@
       transform: translateY(-2px);
     }
 
-    
+    /* ── SECTIONS ── */
     section { padding: 6rem 5vw; }
     .section-label {
       font-family: 'JetBrains Mono', monospace;
@@ -170,7 +171,8 @@
       margin-bottom: 3.5rem; line-height: 1.7;
     }
 
-   
+    /* ── ABOUT ── */
+    /* ── ABOUT ── */
     #about { background: var(--bg2); }
     .about-grid {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -184,6 +186,13 @@
       border: 1px solid var(--border);
       box-shadow: var(--glow);
       position: relative; overflow: hidden;
+      /* Tambahan efek transisi smooth saat hover */
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    /* Tambahan efek ketika kursor diarahkan ke foto */
+    .about-avatar:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 0 40px rgba(108, 99, 255, 0.4);
     }
     .about-avatar img {
       width: 100%; height: 100%; object-fit: cover; display: block;
@@ -191,7 +200,7 @@
     .about-avatar::after {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(0,212,255,.06), rgba(108,99,255,.06));
+      background: linear-gradient(135deg, rgba(0,212,255,.06), rgba(108, 99, 255,.06));
       pointer-events: none;
     }
     .about-info { display: flex; flex-direction: column; gap: 1rem; }
@@ -210,7 +219,7 @@
       color: var(--cyan);
     }
 
-    
+   
     #stacks { background: var(--bg); }
     .stacks-grid {
       display: grid;
@@ -248,7 +257,7 @@
       transition: width 1s ease;
     }
 
-    
+    /* ── PROJECTS ── */
     #projects { background: var(--bg2); }
     .projects-grid {
       display: grid;
@@ -295,7 +304,7 @@
     }
     .project-error { color: var(--muted); text-align: center; grid-column: 1/-1; padding: 2rem; }
 
-   
+    /* ── CONTACT ── */
     #contact { background: var(--bg); }
     .contact-wrapper { max-width: 640px; }
     
@@ -371,7 +380,6 @@
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s, transform .6s; }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 680px) {
       .about-grid { grid-template-columns: 1fr; }
       .about-avatar-wrap { order: -1; }
@@ -421,7 +429,7 @@
     <div class="about-grid">
       <div class="about-avatar-wrap">
         <div class="about-avatar">
-          <img src="https://i.pinimg.com/736x/41/4b/40/414b405f8abf4b56f31e6b69fbf60265.jpg" alt="Azka's profile picture" />
+          <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGJ1M3c4cXl2d2hkNHRqdGw3b29xNnI5aDNpcG9keXR0Y21udTE3NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/62lF7PPNddey4/200.webp" alt="Azka's profile picture" />
         </div>
       </div>
       <div class="about-info">
@@ -429,7 +437,7 @@
         <h2>My Name Is Azka Naufal Aleeswa Athallah</h2>
         <p>
           17 tahun, Saya Adalah Siswa Kelas 12 Bersekolah di <strong>SMKN 8 Semarang</strong>. Saya adalah Orang yang passionate di dunia programming,
-          terutama di Bagian Front End dari bikin tampilan web sampai ngulik logika di balik layar. Saya menguasai beberapa bahasa pemrogramman, seperti HTML, CSS, JavaScript, dan python. 
+          terutama di Bagian Front End dari bikin tampilan web sampai ngulik logika di balik layar. Saya menguasai beberapa bahasa pemrogramman, seperti HTML, CSS, JavaScript, dan python. Saya saat ini masih mempelajari bahasa pemrograman PHP dan juga laravel :D.
         </p>
         <p>
           Di luar coding, saya suka eksplorasi teknologi baru, belajar hal-hal yang tidak ada di kurikulum,
@@ -471,7 +479,7 @@
     <div class="contact-wrapper">
       <div class="section-label">Get In Touch</div>
       <h2 class="section-title">Let's Connect</h2>
-      <p class="section-sub">Ada proyek seru, kolaborasi, atau sekedar ngobrol? Langsung aja hubungi aku lewat link di bawah!</p>
+      <p class="section-sub">Ada proyek seru, kolaborasi, atau sekedar ngobrol? Langsung saja hubungi aku lewat link di bawah!</p>
       
       <div class="contact-cards">
        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=azkanaufal750@gmail.com" target="_blank" rel="noopener" class="contact-card">
@@ -508,9 +516,10 @@
 </footer>
 
 <script>
-  
+ 
   const phrases = [
     'Front-end Developer 🎨',
+    'Vibe Coder :D',
     'SMK Student & Self-learner 📚',
     'Building cool things 🔨',
   ];
@@ -532,27 +541,33 @@
   }
   type();
 
- 
-  const stacks = [
-    { name: 'HTML',   icon: '🌐', level: 85, color: '#e34c26' },
-    { name: 'CSS',    icon: '🎨', level: 80, color: '#264de4' },
-    { name: 'JavaScript', icon: '⚡', level: 70, color: '#f7df1e' },
-    { name: 'Python', icon: '🐍', level: 72, color: '#3572A5' },
-    { name: 'Git',    icon: '🔀', level: 75, color: '#f05032' },
-    { name: 'GitHub', icon: '🐙', level: 75, color: '#6e5494' },
-  ];
-  const sg = document.getElementById('stacks-grid');
-  sg.innerHTML = stacks.map(s => `
-    <div class="stack-card">
-      <div class="stack-icon">${s.icon}</div>
-      <div class="stack-name">${s.name}</div>
-      <div class="stack-level">
-        <div class="stack-level-fill" data-width="${s.level}" style="width:0%"></div>
-      </div>
-    </div>
-  `).join('');
+  
+ const stacks = [
+  { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg', level: 85, color: '#e34c26' },
+  { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg', level: 80, color: '#264de4' },
+  { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg', level: 70, color: '#f7df1e' },
+  { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg', level: 72, color: '#3572A5' },
+  { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg', level: 75, color: '#f05032' },
+  { name: 'GitHub', icon: 'https://brand.github.com/_next/static/media/logo-03.cc5e5332.png', level: 75, color: '#6e5494' },
+  { name: 'PHP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg', level: 65, color: '#777BB4' },
+  { name: 'Laravel', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg', level: 70, color: '#FF2D20' },
+];
 
-  /* ── PINNED PROJECTS ── */
+const sg = document.getElementById('stacks-grid');
+
+sg.innerHTML = stacks.map(s => `
+  <div class="stack-card">
+    <div class="stack-icon">
+      <img src="${s.icon}" alt="${s.name} logo" style="width: 40px; height: 40px; object-fit: contain;">
+    </div>
+    <div class="stack-name">${s.name}</div>
+    <div class="stack-level">
+      <div class="stack-level-fill" data-width="${s.level}" style="width:0%; background-color: ${s.color};"></div>
+    </div>
+  </div>
+`).join('');
+
+
   document.getElementById('projects-grid').innerHTML = [
     { name: 'DailyWrite',                  desc: 'My Blog Maker Website Using Laravel',                          lang: 'Blade',  color: '#ff3820', url: 'https://github.com/Npalzzz/DailyWrite' },
     { name: 'Python-Assignments',            desc: 'School Assignments',                                         lang: 'Python', color: '#3572A5', url: 'https://github.com/Npalzzz/Python-Assignments' },
@@ -568,13 +583,13 @@
       + '</a>';
   }).join('');
 
-
+ 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
   }, { threshold: .12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  
+ 
   const barObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
