@@ -1,559 +1,1377 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Azka Naufal — Portofolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azka Naufal — Portofolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    :root {
-      --bg:        #0a0e1a;
-      --bg2:       #0f1526;
-      --bg3:       #161d33;
-      --cyan:      #00d4ff;
-      --purple:    #6c63ff;
-      --green:     #39d98a;
-      --text:      #e8eaf0;
-      --muted:     #7a8099;
-      --border:    rgba(0, 212, 255, 0.12);
-      --glow:      0 0 24px rgba(0, 212, 255, 0.25);
-    }
+      :root {
+        --bg: #0a0e1a;
+        --bg2: #0f1526;
+        --bg3: #161d33;
+        --cyan: #00d4ff;
+        --purple: #6c63ff;
+        --green: #39d98a;
+        --text: #e8eaf0;
+        --muted: #7a8099;
+        --border: rgba(0, 212, 255, 0.12);
+        --glow: 0 0 24px rgba(0, 212, 255, 0.25);
+      }
 
-    html { scroll-behavior: smooth; }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
 
-    
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.1rem 5vw;
-      background: rgba(10, 14, 26, 0.7);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700; font-size: 1.15rem;
-      color: var(--cyan);
-      letter-spacing: -0.5px;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--muted); text-decoration: none;
-      font-size: 0.875rem; font-weight: 500;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--cyan); }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.1rem 5vw;
+        background: rgba(10, 14, 26, 0.7);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-logo {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: var(--cyan);
+        letter-spacing: -0.5px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--cyan);
+      }
 
-    
-    #hero {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 8rem 5vw 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(0,212,255,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,212,255,.04) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
-    }
-    .hero-glow {
-      position: absolute; width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(108,99,255,.18) 0%, transparent 70%);
-      top: 10%; left: -10%; pointer-events: none;
-    }
-    .hero-glow2 {
-      position: absolute; width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(0,212,255,.12) 0%, transparent 70%);
-      bottom: 10%; right: 5%; pointer-events: none;
-    }
-    .hero-content { position: relative; z-index: 1; max-width: 760px; }
+      .hamburger {
+        display: none;
+        width: 34px;
+        height: 28px;
 
-    .hero-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem; color: var(--cyan);
-      letter-spacing: 2px; text-transform: uppercase;
-      margin-bottom: 1.2rem;
-      display: flex; align-items: center; gap: .6rem;
-    }
-    .hero-eyebrow::before {
-      content: ''; display: inline-block;
-      width: 24px; height: 1.5px; background: var(--cyan);
-    }
+        cursor: pointer;
 
-    h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.6rem, 7vw, 5rem);
-      font-weight: 700; line-height: 1.05;
-      letter-spacing: -1.5px;
-      margin-bottom: 1rem;
-    }
-    h1 .name-highlight {
-      background: linear-gradient(135deg, var(--cyan) 0%, var(--purple) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+        flex-direction: column;
+        justify-content: space-between;
 
-    .hero-terminal {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.05rem; color: var(--green);
-      margin-bottom: 1.8rem;
-      min-height: 1.6em;
-    }
-    .cursor {
-      display: inline-block; width: 2px; height: 1.1em;
-      background: var(--green); vertical-align: text-bottom;
-      animation: blink .9s step-end infinite;
-    }
-    @keyframes blink { 50% { opacity: 0; } }
+        z-index: 1001;
+      }
 
-    .hero-desc {
-      color: var(--muted); font-size: 1.05rem; max-width: 520px;
-      margin-bottom: 2.4rem; line-height: 1.7;
-    }
+      .hamburger span {
+        display: block;
 
-    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: .5rem;
-      padding: .75rem 1.6rem; border-radius: 8px;
-      font-size: .9rem; font-weight: 600;
-      text-decoration: none; cursor: pointer; border: none;
-      transition: all .25s;
-    }
-    .btn-primary {
-      background: var(--cyan); color: var(--bg);
-      box-shadow: 0 0 20px rgba(0,212,255,.3);
-    }
-    .btn-primary:hover {
-      background: #33ddff;
-      box-shadow: 0 0 32px rgba(0,212,255,.5);
-      transform: translateY(-2px);
-    }
-    .btn-outline {
-      background: transparent; color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .btn-outline:hover {
-      border-color: var(--cyan); color: var(--cyan);
-      transform: translateY(-2px);
-    }
+        width: 100%;
+        height: 3px;
 
-    
-    section { padding: 6rem 5vw; }
-    .section-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .75rem; color: var(--cyan);
-      letter-spacing: 3px; text-transform: uppercase;
-      margin-bottom: .6rem;
-    }
-    .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 700; letter-spacing: -1px;
-      margin-bottom: 1rem;
-    }
-    .section-sub {
-      color: var(--muted); font-size: 1rem; max-width: 500px;
-      margin-bottom: 3.5rem; line-height: 1.7;
-    }
+        background: var(--cyan);
 
-    #about { background: var(--bg2); }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: center;
-    }
-    .about-avatar-wrap {
-      display: flex; justify-content: center;
-    }
-    .about-avatar {
-      width: 240px; height: 240px; border-radius: 24px;
-      border: 1px solid var(--border);
-      box-shadow: var(--glow);
-      position: relative; overflow: hidden;
-     
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    
-    .about-avatar:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 0 40px rgba(108, 99, 255, 0.4);
-    }
-    .about-avatar img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-    }
-    .about-avatar::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(0,212,255,.06), rgba(108, 99, 255,.06));
-      pointer-events: none;
-    }
-    .about-info { display: flex; flex-direction: column; gap: 1rem; }
-    .about-info h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.9rem; font-weight: 700; letter-spacing: -0.5px;
-    }
-    .about-info p { color: var(--muted); line-height: 1.8; }
-    .about-tags { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .5rem; }
-    .tag {
-      display: inline-block;
-      padding: .3rem .8rem; border-radius: 20px;
-      font-size: .78rem; font-weight: 500;
-      background: rgba(0,212,255,.08);
-      border: 1px solid rgba(0,212,255,.18);
-      color: var(--cyan);
-    }
+        border-radius: 100px;
 
-   
-    #stacks { background: var(--bg); }
-    .stacks-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 1.2rem;
-    }
-    .stack-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.6rem 1.2rem;
-      display: flex; flex-direction: column; align-items: center;
-      gap: .8rem;
-      transition: all .25s;
-      cursor: default;
-    }
-    .stack-card:hover {
-      border-color: var(--cyan);
-      transform: translateY(-4px);
-      box-shadow: var(--glow);
-    }
-    .stack-icon { font-size: 2.4rem; line-height: 1; }
-    .stack-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .95rem; font-weight: 600;
-      color: var(--text);
-    }
-    .stack-level {
-      width: 100%; height: 3px; border-radius: 2px;
-      background: var(--bg3); overflow: hidden;
-    }
-    .stack-level-fill {
-      height: 100%; border-radius: 2px;
-      background: linear-gradient(90deg, var(--cyan), var(--purple));
-      transition: width 1s ease;
-    }
+        transition: 0.35s ease;
+      }
 
-    
-    #projects { background: var(--bg2); }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.4rem;
-    }
-    .project-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.6rem;
-      display: flex; flex-direction: column; gap: 1rem;
-      transition: all .25s;
-      text-decoration: none; color: inherit;
-      position: relative; overflow: hidden;
-    }
-    .project-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--cyan), var(--purple));
-      opacity: 0; transition: opacity .25s;
-    }
-    .project-card:hover { border-color: rgba(0,212,255,.3); transform: translateY(-4px); }
-    .project-card:hover::before { opacity: 1; }
-    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: .5rem; }
-    .project-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.05rem; font-weight: 600;
-    }
-    .project-arrow { color: var(--muted); font-size: 1.1rem; }
-    .project-desc { color: var(--muted); font-size: .875rem; line-height: 1.65; flex: 1; }
-    .project-footer { display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; }
-    .project-lang {
-      display: flex; align-items: center; gap: .35rem;
-      font-size: .78rem; color: var(--muted);
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .lang-dot { width: 8px; height: 8px; border-radius: 50%; }
-    .project-stars { font-size: .78rem; color: var(--muted); display: flex; align-items: center; gap: .25rem; }
-    .project-loading {
-      color: var(--muted); font-size: .9rem;
-      font-family: 'JetBrains Mono', monospace;
-      padding: 3rem; text-align: center; grid-column: 1/-1;
-    }
-    .project-error { color: var(--muted); text-align: center; grid-column: 1/-1; padding: 2rem; }
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 5vw 5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-grid {
+        position: absolute;
+        inset: 0;
 
-   
-    #contact { background: var(--bg); }
-    .contact-wrapper { max-width: 640px; }
-    
-    .contact-cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    
-    @media (min-width: 500px) {
-      .contact-cards { grid-template-columns: 1fr 1fr; }
-    }
-    
-    .contact-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      text-decoration: none;
-      transition: all .25s;
-    }
-    
-    .contact-card:hover {
-      border-color: var(--cyan);
-      transform: translateY(-4px);
-      box-shadow: var(--glow);
-    }
-    
-    .contact-icon {
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 54px;
-      height: 54px;
-      background: rgba(0, 212, 255, 0.08);
-      border-radius: 14px;
-      color: var(--cyan);
-    }
-    
-    .contact-info h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      color: var(--text);
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-    }
-    
-    .contact-info p {
-      color: var(--muted);
-      font-size: 0.85rem;
-      font-family: 'JetBrains Mono', monospace;
-    }
+        background-image:
+          linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
 
-    
-    footer {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      padding: 2.5rem 5vw;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
-    }
-    .footer-copy { color: var(--muted); font-size: .82rem; }
-    .footer-links { display: flex; gap: 1.2rem; }
-    .footer-links a { color: var(--muted); font-size: .82rem; text-decoration: none; transition: color .2s; }
-    .footer-links a:hover { color: var(--cyan); }
+        background-size: 48px 48px;
+        mask-image: radial-gradient(
+          ellipse 80% 60% at 50% 50%,
+          black 30%,
+          transparent 100%
+        );
 
-  
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s, transform .6s; }
-    .reveal.visible { opacity: 1; transform: none; }
+        pointer-events: none;
+      }
+      .hero-glow {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(108, 99, 255, 0.18) 0%,
+          transparent 70%
+        );
+        top: 10%;
+        left: -10%;
+        pointer-events: none;
+      }
+      .hero-glow2 {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(0, 212, 255, 0.12) 0%,
+          transparent 70%
+        );
+        bottom: 10%;
+        right: 5%;
+        pointer-events: none;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 760px;
+      }
 
-    @media (max-width: 680px) {
-      .about-grid { grid-template-columns: 1fr; }
-      .about-avatar-wrap { order: -1; }
-      nav { padding: 1rem 4vw; }
-      .nav-links { gap: 1.2rem; }
-    }
-  </style>
-</head>
-<body>
+      .hero-eyebrow {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.8rem;
+        color: var(--cyan);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .hero-eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 1.5px;
+        background: var(--cyan);
+      }
 
-<nav>
-  <div class="nav-logo">azka.dev</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#stacks">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+      h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2.6rem, 7vw, 5rem);
+        font-weight: 700;
+        line-height: 1.05;
+        letter-spacing: -1.5px;
+        margin-bottom: 1rem;
+      }
+      h1 .name-highlight {
+        background: linear-gradient(135deg, var(--cyan) 0%, var(--purple) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
 
-<section id="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Portofolio · 2026</div>
-    <h1>Hello Im <span class="name-highlight">Azka Naufal</span></h1>
-    <div class="hero-terminal" id="typewriter"><span class="cursor"></span></div>
-    <p class="hero-desc">
-      Pelajar SMK yang suka ngoding, eksperimen hal baru, dan membangun sesuatu dari nol.
-      Still learning :>
-    </p>
-    <div class="hero-ctas">
-      <a href="#projects" class="btn btn-primary">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        Lihat Projects
-      </a>
-      <a href="#contact" class="btn btn-outline">
-        Hubungi Aku →
-      </a>
-    </div>
-  </div>
-</section>
+      .hero-terminal {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 1.05rem;
+        color: var(--green);
+        margin-bottom: 1.8rem;
+        min-height: 1.6em;
+      }
+      .cursor {
+        display: inline-block;
+        width: 2px;
+        height: 1.1em;
+        background: var(--green);
+        vertical-align: text-bottom;
+        animation: blink 0.9s step-end infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
 
-<section id="about">
-  <div class="reveal">
-    <div class="about-grid">
-      <div class="about-avatar-wrap">
-        <div class="about-avatar">
-          <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGJ1M3c4cXl2d2hkNHRqdGw3b29xNnI5aDNpcG9keXR0Y21udTE3NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/62lF7PPNddey4/200.webp" alt="Azka's profile picture" />
+      .hero-desc {
+        color: var(--muted);
+        font-size: 1.05rem;
+        max-width: 520px;
+        margin-bottom: 2.4rem;
+        line-height: 1.7;
+      }
+
+      .hero-ctas {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.6rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        transition: all 0.25s;
+      }
+      .btn-primary {
+        background: var(--cyan);
+        color: var(--bg);
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+      }
+      .btn-primary:hover {
+        background: #33ddff;
+        box-shadow: 0 0 32px rgba(0, 212, 255, 0.5);
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+      .btn-outline:hover {
+        border-color: var(--cyan);
+        color: var(--cyan);
+        transform: translateY(-2px);
+      }
+
+      section {
+        padding: 6rem 5vw;
+      }
+      .section-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: var(--cyan);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 0.6rem;
+      }
+      .section-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 700;
+        letter-spacing: -1px;
+        margin-bottom: 1rem;
+      }
+      .section-sub {
+        color: var(--muted);
+        font-size: 1rem;
+        max-width: 500px;
+        margin-bottom: 3.5rem;
+        line-height: 1.7;
+      }
+
+      #about {
+        background: var(--bg2);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      .about-avatar-wrap {
+        display: flex;
+        justify-content: center;
+      }
+      .about-avatar {
+        width: 240px;
+        height: 240px;
+        border-radius: 24px;
+        border: 1px solid var(--border);
+        box-shadow: var(--glow);
+        position: relative;
+        overflow: hidden;
+
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+
+      .about-avatar:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 0 40px rgba(108, 99, 255, 0.4);
+      }
+      .about-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .about-avatar::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 212, 255, 0.06),
+          rgba(108, 99, 255, 0.06)
+        );
+        pointer-events: none;
+      }
+      .about-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .about-info h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.9rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+      .about-info p {
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .about-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+      }
+      .tag {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.78rem;
+        font-weight: 500;
+        background: rgba(0, 212, 255, 0.08);
+        border: 1px solid rgba(0, 212, 255, 0.18);
+        color: var(--cyan);
+      }
+
+      #hobbies {
+        background: var(--bg2);
+      }
+      .hobbies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.4rem;
+      }
+      .hobby-card {
+        background: var(--bg3);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transition: all 0.25s;
+      }
+      .hobby-card:hover {
+        border-color: var(--cyan);
+        transform: translateY(-4px);
+        box-shadow: var(--glow);
+      }
+      .hobby-header {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      .hobby-icon {
+        font-size: 1.8rem;
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 212, 255, 0.08);
+        border-radius: 14px;
+      }
+      .hobby-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.15rem;
+        font-weight: 600;
+      }
+      .hobby-sub {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .hobby-section-label {
+        font-size: 0.78rem;
+        color: var(--purple);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-top: 0.3rem;
+      }
+      .hobby-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .hobby-tag {
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.78rem;
+        font-weight: 500;
+        background: rgba(108, 99, 255, 0.08);
+        border: 1px solid rgba(108, 99, 255, 0.2);
+        color: var(--purple);
+      }
+      .hobby-tag.game {
+        background: rgba(57, 217, 138, 0.08);
+        border: 1px solid rgba(57, 217, 138, 0.2);
+        color: var(--green);
+      }
+
+      .favorite-songs,
+      .favorite-albums,
+      .favorite-games {
+        margin-top: 0.3rem;
+      }
+      .favorite-songs h3,
+      .favorite-albums h3,
+      .favorite-games h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.7rem;
+      }
+      .song,
+      .album,
+      .game {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.55rem 0.8rem;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 0.5rem;
+        transition: all 0.2s;
+      }
+      .song:hover,
+      .album:hover,
+      .game:hover {
+        border-color: var(--cyan);
+        color: var(--text);
+        transform: translateX(3px);
+      }
+      .song:last-child,
+      .album:last-child,
+      .game:last-child {
+        margin-bottom: 0;
+      }
+      .album-rank {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: var(--purple);
+        font-weight: 600;
+        min-width: 1.2em;
+      }
+      .cover-thumb {
+        width: 54px;
+        height: 54px;
+        border-radius: 10px;
+        object-fit: cover;
+        border: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+
+      #stacks {
+        background: var(--bg);
+      }
+      .stacks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1.2rem;
+      }
+      .stack-card {
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.6rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        transition: all 0.25s;
+        cursor: default;
+      }
+      .stack-card:hover {
+        border-color: var(--cyan);
+        transform: translateY(-4px);
+        box-shadow: var(--glow);
+      }
+      .stack-icon {
+        font-size: 2.4rem;
+        line-height: 1;
+      }
+      .stack-name {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .stack-level {
+        width: 100%;
+        height: 3px;
+        border-radius: 2px;
+        background: var(--bg3);
+        overflow: hidden;
+      }
+      .stack-level-fill {
+        height: 100%;
+        border-radius: 2px;
+        background: linear-gradient(90deg, var(--cyan), var(--purple));
+        transition: width 1s ease;
+      }
+
+      #projects {
+        background: var(--bg2);
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.4rem;
+      }
+      .project-card {
+        background: var(--bg3);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transition: all 0.25s;
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+        overflow: hidden;
+      }
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--cyan), var(--purple));
+        opacity: 0;
+        transition: opacity 0.25s;
+      }
+      .project-card:hover {
+        border-color: rgba(0, 212, 255, 0.3);
+        transform: translateY(-4px);
+      }
+      .project-card:hover::before {
+        opacity: 1;
+      }
+      .project-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.5rem;
+      }
+      .project-name {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.05rem;
+        font-weight: 600;
+      }
+      .project-arrow {
+        color: var(--muted);
+        font-size: 1.1rem;
+      }
+      .project-desc {
+        color: var(--muted);
+        font-size: 0.875rem;
+        line-height: 1.65;
+        flex: 1;
+      }
+      .project-footer {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .project-lang {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-family: "JetBrains Mono", monospace;
+      }
+      .lang-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+      .project-stars {
+        font-size: 0.78rem;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      .project-loading {
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-family: "JetBrains Mono", monospace;
+        padding: 3rem;
+        text-align: center;
+        grid-column: 1/-1;
+      }
+      .project-error {
+        color: var(--muted);
+        text-align: center;
+        grid-column: 1/-1;
+        padding: 2rem;
+      }
+
+      #contact {
+        background: var(--bg);
+      }
+      .contact-wrapper {
+        max-width: 640px;
+      }
+
+      .contact-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+      }
+
+      @media (min-width: 500px) {
+        .contact-cards {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .contact-card {
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        text-decoration: none;
+        transition: all 0.25s;
+      }
+
+      .contact-card:hover {
+        border-color: var(--cyan);
+        transform: translateY(-4px);
+        box-shadow: var(--glow);
+      }
+
+      .contact-icon {
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 54px;
+        height: 54px;
+        background: rgba(0, 212, 255, 0.08);
+        border-radius: 14px;
+        color: var(--cyan);
+      }
+
+      .contact-info h3 {
+        font-family: "Space Grotesk", sans-serif;
+        color: var(--text);
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+
+      .contact-info p {
+        color: var(--muted);
+        font-size: 0.85rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      footer {
+        background: var(--bg2);
+        border-top: 1px solid var(--border);
+        padding: 2.5rem 5vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .footer-copy {
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+      .footer-links {
+        display: flex;
+        gap: 1.2rem;
+      }
+      .footer-links a {
+        color: var(--muted);
+        font-size: 0.82rem;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: var(--cyan);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.6s,
+          transform 0.6s;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      .backdrop {
+        position: fixed;
+        inset: 0;
+
+        background: rgba(0, 0, 0, 0.45);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: 0.35s;
+
+        z-index: 998;
+      }
+
+      .backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+
+          width: 270px;
+          height: 100vh;
+
+          background: rgba(15, 21, 38, 0.95);
+          backdrop-filter: blur(18px);
+          border-left: 1px solid var(--border);
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 35px;
+
+          transition: 0.45s ease;
+
+          z-index: 2000;
+          pointer-events: auto;
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .about-avatar-wrap {
+          order: -1;
+        }
+
+        footer {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .contact-cards {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-ctas {
+          flex-direction: column;
+        }
+
+        .btn {
+          justify-content: center;
+        }
+
+        .hamburger.active span:nth-child(1) {
+          transform: translateY(12px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+          transform: translateY(-12px) rotate(-45deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo">azka.dev</div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#stacks">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <section id="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-glow2"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">Portofolio · 2026</div>
+        <h1>Hello Im <span class="name-highlight">Azka Naufal</span></h1>
+        <div class="hero-terminal" id="typewriter">
+          <span class="cursor"></span>
+        </div>
+        <p class="hero-desc">
+          Pelajar SMK yang suka ngoding, eksperimen hal baru, dan membangun
+          sesuatu dari nol. Still learning :>
+        </p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              />
+            </svg>
+            Lihat Projects
+          </a>
+          <a href="#contact" class="btn btn-outline"> Hubungi Aku → </a>
         </div>
       </div>
-      <div class="about-info">
-        <div class="section-label">About Me</div>
-        <h2>My Name Is Azka Naufal Aleeswa Athallah</h2>
-        <p>
-          17 tahun, Saya Adalah Siswa Kelas 12 Bersekolah di <strong>SMKN 8 Semarang</strong>. Saya adalah Orang yang passionate di dunia programming,
-          terutama di Bagian Front End dari bikin tampilan web sampai ngulik logika di balik layar. Saya menguasai beberapa bahasa pemrogramman, seperti HTML, CSS, JavaScript, dan python. Saya saat ini masih mempelajari bahasa pemrograman PHP dan juga laravel :D.
-        </p>
-        <p>
-          Di luar coding, saya suka eksplorasi teknologi baru, belajar hal-hal yang tidak ada di kurikulum,
-          dan saya percaya bahwa umur bukan halangan buat bikin sesuatu yang berguna.
-        </p>
-        <div class="about-tags">
-          <span class="tag">🎓 SMKN 8 Semarang</span>
-          <span class="tag">📍 Semarang</span>
-          <span class="tag">🔥 17 tahun</span>
-          <span class="tag">💻 Open to Collab</span>
+    </section>
+
+    <section id="about">
+      <div class="reveal">
+        <div class="about-grid">
+          <div class="about-avatar-wrap">
+            <div class="about-avatar">
+              <img
+                src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGJ1M3c4cXl2d2hkNHRqdGw3b29xNnI5aDNpcG9keXR0Y21udTE3NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/62lF7PPNddey4/200.webp"
+                alt="Azka's profile picture"
+              />
+            </div>
+          </div>
+          <div class="about-info">
+            <div class="section-label">About Me</div>
+            <h2>My Name Is Azka Naufal Aleeswa Athallah</h2>
+            <p>
+              17 tahun, Saya Adalah Siswa Kelas 12 Bersekolah di
+              <strong>SMKN 8 Semarang</strong>. Saya adalah Orang yang
+              passionate di dunia programming, terutama di Bagian Front End dari
+              bikin tampilan web sampai ngulik logika di balik layar. Saya
+              menguasai beberapa bahasa pemrogramman, seperti HTML, CSS,
+              JavaScript, dan python. Saya saat ini masih mempelajari bahasa
+              pemrograman PHP dan juga laravel :D.
+            </p>
+            <p>
+              Di luar coding, saya suka eksplorasi teknologi baru, belajar
+              hal-hal yang tidak ada di kurikulum, dan saya percaya bahwa umur
+              bukan halangan buat bikin sesuatu yang berguna.
+            </p>
+            <div class="about-tags">
+              <span class="tag">🎓 SMKN 8 Semarang</span>
+              <span class="tag">📍 Semarang</span>
+              <span class="tag">🔥 17 tahun</span>
+              <span class="tag">💻 Open to Collab</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="stacks">
-  <div class="reveal">
-    <div class="section-label">Tech Stack</div>
-    <h2 class="section-title">Tools & Technologies</h2>
-    <p class="section-sub">Yang aku pakai sehari-hari untuk membangun proyek-proyekku.</p>
-    <div class="stacks-grid" id="stacks-grid"></div>
-  </div>
-</section>
+    <section id="hobbies">
+      <div class="reveal">
+        <div class="section-label">Off Duty</div>
+        <h2 class="section-title">Hobbies</h2>
+        <p class="section-sub">
+          Di luar coding, ini yang bikin aku betah di depan layar :D
+        </p>
 
-<section id="projects">
-  <div class="reveal">
-    <div class="section-label">Work</div>
-    <h2 class="section-title">Projects</h2>
-    <p class="section-sub">Langsung dari GitHub — hasil eksperimen dan belajarku.</p>
-    <div class="projects-grid" id="projects-grid">
-      <div class="project-loading">⟳ Mengambil data dari GitHub...</div>
-    </div>
-  </div>
-</section>
+        <div class="hobbies-grid">
+          <!-- MUSIC -->
+          <div class="hobby-card">
+            <div class="hobby-header">
+              <div class="hobby-icon">🎧</div>
 
-<section id="contact">
-  <div class="reveal">
-    <div class="contact-wrapper">
-      <div class="section-label">Get In Touch</div>
-      <h2 class="section-title">Let's Connect</h2>
-      <p class="section-sub">Ada proyek seru, kolaborasi, atau sekedar ngobrol? Langsung saja hubungi aku lewat link di bawah!</p>
-      
-      <div class="contact-cards">
-       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=azkanaufal750@gmail.com" target="_blank" rel="noopener" class="contact-card">
-          <div class="contact-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          </div>
-          <div class="contact-info">
-            <h3>Email</h3>
-            <p>azkanaufal750<br>@gmail.com</p>
-          </div>
-        </a>
+              <div>
+                <div class="hobby-title">Music</div>
+                <div class="hobby-sub">Metalhead 🤘</div>
+              </div>
+            </div>
 
-        <a href="https://instagram.com/npalzzzz" target="_blank" rel="noopener" class="contact-card">
-          <div class="contact-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            <div class="hobby-section-label">Genre</div>
+
+            <div class="hobby-tags">
+              <span class="hobby-tag">Thrash Metal</span>
+              <span class="hobby-tag">Groove Metal</span>
+              <span class="hobby-tag">Neue Deutsche Härte</span>
+            </div>
+
+            <div class="hobby-section-label">Favorite Bands</div>
+
+            <div class="hobby-tags">
+              <span class="hobby-tag">Metallica</span>
+              <span class="hobby-tag">Pantera</span>
+              <span class="hobby-tag">Rammstein</span>
+            </div>
+
+            <div class="favorite-albums">
+              <h3>💿 Top Albums</h3>
+
+             
+              <a class="album" href="https://open.spotify.com/album/2Lq2qX3hYhiuPckC8Flj21" target="_blank" rel="noopener">
+                <span class="album-rank">01</span>
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/736x/d6/b2/f5/d6b2f51510420866f5f652c90ee08ad1.jpg"
+                  alt="Cover album Master of Puppets - Metallica"
+                />
+                Master of Puppets — Metallica
+              </a>
+
+              <a class="album" href="https://open.spotify.com/album/6jZ1z25PyF4Yd3kHxt9rl1" target="_blank" rel="noopener">
+                <span class="album-rank">02</span>
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/736x/9c/54/c0/9c54c06febe40218fe54c37c02039520.jpg"
+                  alt="Cover album ...And Justice for All - Metallica"
+                />
+                ...And Justice for All — Metallica
+              </a>
+
+              <a class="album" href="https://open.spotify.com/album/4LdquqwQoyu1pE6Vq8PIha" target="_blank" rel="noopener">
+                <span class="album-rank">03</span>
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/736x/c8/85/65/c885656daa0315ba290d9c4991377537.jpg"
+                  alt="Cover album The Great Southern Trendkill - Pantera"
+                />
+                The Great Southern Trendkill - Pantera
+              </a>
+
+              <a class="album" href="https://open.spotify.com/album/5szY4sBOSD6IFjFN1RtWTe" target="_blank" rel="noopener">
+                <span class="album-rank">04</span>
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/1200x/53/f9/87/53f987c2bdd03c2372474f39d65ad99b.jpg"
+                  alt="Cover album Cowboys From Hell - Pantera"
+                />
+                Cowboys From Hell — Pantera
+              </a>
+
+              <a class="album" href="https://open.spotify.com/album/1CtTTpKbHU8KbHRB4LmBbv" target="_blank" rel="noopener">
+                <span class="album-rank">05</span>
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/1200x/46/a5/ea/46a5ea6aa6a305465a65c33c9bad03ec.jpg"
+                  alt="Cover album Mutter - Rammstein"
+                />
+                Mutter — Rammstein
+              </a>
+            </div>
+
+            <div class="favorite-songs">
+              <h3>🔥 Top Tracks</h3>
+
+              <a class="song" href="https://open.spotify.com/track/055Oi1gpZYQ3mVC5aOntx7" target="_blank" rel="noopener">
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/736x/c8/85/65/c885656daa0315ba290d9c4991377537.jpg"
+                  alt="Cover lagu The Great Southern Trendkill - Pantera"
+                />
+                The Great Southern Trendkill
+              </a>
+
+              <a class="song" href="https://open.spotify.com/track/5SAEMjVQbmin3g7b0RG6me" target="_blank" rel="noopener">
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/736x/a7/7c/42/a77c42396086fd96f89eb9e33662301c.jpg"
+                  alt="Cover lagu 5 Minutes Alone - Pantera"
+                />
+                5 Minutes Alone
+              </a>
+
+              <a class="song" href="https://open.spotify.com/track/4tPHBRIPsB55nssjvKDbjj" target="_blank" rel="noopener">
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/736x/d6/b2/f5/d6b2f51510420866f5f652c90ee08ad1.jpg"
+                  alt="Cover lagu Disposable Heroes - Metallica"
+                />
+                Disposable Heroes
+              </a>
+
+              <a class="song" href="https://open.spotify.com/track/1L2ZkXbRX00ZiaUDuMMgf7" target="_blank" rel="noopener">
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/736x/c8/85/65/c885656daa0315ba290d9c4991377537.jpg"
+                  alt="Cover lagu Floods - Pantera"
+                />
+                Floods
+              </a>
+
+              <a class="song" href="https://open.spotify.com/track/5ArNGisLzrNOIVwWajRRdt" target="_blank" rel="noopener">
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/1200x/46/a5/ea/46a5ea6aa6a305465a65c33c9bad03ec.jpg"
+                  alt="Cover lagu Mein Herz Brennt - Rammstein"
+                />
+                Mein Herz Brennt
+              </a>
+            </div>
           </div>
-          <div class="contact-info">
-            <h3>Instagram</h3>
-            <p>@npalzzzz</p>
+
+          <div class="hobby-card">
+            <div class="hobby-header">
+              <div class="hobby-icon">🎮</div>
+
+              <div>
+                <div class="hobby-title">Gaming</div>
+                <div class="hobby-sub">Tactical & Sandbox Enjoyer</div>
+              </div>
+            </div>
+
+            <div class="hobby-section-label">Favorite Games</div>
+
+            <div class="favorite-games">
+             
+              <div class="game">
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/1200x/72/2c/9f/722c9f56f68a619d2d94a55abb8f3631.jpg"
+                  alt="Cover game Payday 2"
+                />
+                Payday 2
+              </div>
+
+              <div class="game">
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/1200x/70/19/bd/7019bd44087eef342afb543287e52aea.jpg"
+                  alt="Cover game Ready or Not"
+                />
+                Ready or Not
+              </div>
+
+              <div class="game">
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/1200x/d2/55/ac/d255ac78bb40edc96076bb4c22a32504.jpg"
+                  alt="Cover game GTA Series"
+                />
+                GTA Series
+              </div>
+
+              <div class="game">
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/1200x/76/0f/51/760f5161e51b3f697e448968e9b01cb3.jpg"
+                  alt="Cover game Metal Gear Solid V: The Phantom Pain"
+                />
+                Metal Gear Solid V: The Phantom Pain
+              </div>
+
+              <div class="game">
+                <img
+                  class="cover-thumb"
+                  src="https://i.pinimg.com/736x/b6/f4/2a/b6f42a199afddb797150104841ae31b4.jpg"
+                  alt="Cover game Roblox"
+                />
+                Roblox
+              </div>
+            </div>
+
+            <div class="favorite-songs">
+              <h3>🎯 Favorite Genres</h3>
+
+              <div class="song">🔫 Tactical Shooter</div>
+
+              <div class="song">🚓 FPS</div>
+
+              <div class="song">🌍 Open World</div>
+
+              <div class="song">🥷 Stealth</div>
+
+              <div class="song">🧱 Sandbox</div>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <section id="stacks">
+      <div class="reveal">
+        <div class="section-label">Tech Stack</div>
+        <h2 class="section-title">Tools & Technologies</h2>
+        <p class="section-sub">
+          Yang aku pakai sehari-hari untuk membangun proyek-proyekku.
+        </p>
+        <div class="stacks-grid" id="stacks-grid"></div>
+      </div>
+    </section>
 
-<footer>
-  <span class="footer-copy">© 2026 Azka Naufal · Built with ❤️ &amp; ☕</span>
-  <div class="footer-links">
-    <a href="https://github.com/Npalzzz" target="_blank" rel="noopener">GitHub</a>
-    <a href="mailto:azkanaufal750@gmail.com">Email</a>
-  </div>
-</footer>
+    <section id="projects">
+      <div class="reveal">
+        <div class="section-label">Work</div>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-sub">
+          Langsung dari GitHub — hasil eksperimen dan belajarku.
+        </p>
+        <div class="projects-grid" id="projects-grid">
+          <div class="project-loading">⟳ Mengambil data dari GitHub...</div>
+        </div>
+      </div>
+    </section>
 
-<script>
- 
-  const phrases = [
-    'Front-end Developer 🎨',
-    'Vibe Coder :D',
-    'SMK Student & Self-learner 📚',
-    'Building cool things 🔨',
-  ];
-  let pi = 0, ci = 0, deleting = false;
-  const el = document.getElementById('typewriter');
-  function type() {
-    const phrase = phrases[pi];
-    if (!deleting) {
-      el.innerHTML = phrase.slice(0, ci + 1) + '<span class="cursor"></span>';
-      ci++;
-      if (ci === phrase.length) { deleting = true; setTimeout(type, 1800); return; }
-      setTimeout(type, 65);
-    } else {
-      el.innerHTML = phrase.slice(0, ci - 1) + '<span class="cursor"></span>';
-      ci--;
-      if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; setTimeout(type, 300); return; }
-      setTimeout(type, 35);
-    }
-  }
-  type();
+    <section id="contact">
+      <div class="reveal">
+        <div class="contact-wrapper">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-sub">
+            Ada proyek seru, kolaborasi, atau sekedar ngobrol? Langsung saja
+            hubungi aku lewat link di bawah!
+          </p>
 
-  
- const stacks = [
-  { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg', level: 85, color: '#e34c26' },
-  { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg', level: 80, color: '#264de4' },
-  { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg', level: 70, color: '#f7df1e' },
-  { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg', level: 50, color: '#3572A5' },
-  { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg', level: 75, color: '#f05032' },
-  { name: 'GitHub', icon: 'https://brand.github.com/_next/static/media/logo-03.cc5e5332.png', level: 75, color: '#6e5494' },
-  { name: 'PHP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg', level: 25, color: '#777BB4' },
-  { name: 'Laravel', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg', level: 15, color: '#FF2D20' },
-];
+          <div class="contact-cards">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=azkanaufal750@gmail.com"
+              target="_blank"
+              rel="noopener"
+              class="contact-card"
+            >
+              <div class="contact-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <h3>Email</h3>
+                <p>azkanaufal750<br />@gmail.com</p>
+              </div>
+            </a>
 
-const sg = document.getElementById('stacks-grid');
+            <a
+              href="https://instagram.com/npalzzzz"
+              target="_blank"
+              rel="noopener"
+              class="contact-card"
+            >
+              <div class="contact-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <h3>Instagram</h3>
+                <p>@npalzzzz</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-sg.innerHTML = stacks.map(s => `
+    <footer>
+      <span class="footer-copy">
+        © 2026 Azka Naufal
+        <br />
+        Built Using
+        <span class="tech">HTML</span> • <span class="tech">CSS</span> •
+        <span class="tech">JavaScript</span>
+        | Hosted on <span class="tech">Vercel</span>
+      </span>
+
+      <div class="footer-links">
+        <a href="https://github.com/Npalzzz" target="_blank">GitHub</a>
+        <a href="mailto:azkanaufal750@gmail.com">Email</a>
+      </div>
+    </footer>
+
+    <script>
+      const phrases = [
+        "Front-end Developer 🎨",
+        "Vibe Coder :D",
+        "SMK Student & Self-learner 📚",
+        "Building cool things 🔨",
+      ];
+      let pi = 0,
+        ci = 0,
+        deleting = false;
+      const el = document.getElementById("typewriter");
+      function type() {
+        const phrase = phrases[pi];
+        if (!deleting) {
+          el.innerHTML =
+            phrase.slice(0, ci + 1) + '<span class="cursor"></span>';
+          ci++;
+          if (ci === phrase.length) {
+            deleting = true;
+            setTimeout(type, 1800);
+            return;
+          }
+          setTimeout(type, 65);
+        } else {
+          el.innerHTML =
+            phrase.slice(0, ci - 1) + '<span class="cursor"></span>';
+          ci--;
+          if (ci === 0) {
+            deleting = false;
+            pi = (pi + 1) % phrases.length;
+            setTimeout(type, 300);
+            return;
+          }
+          setTimeout(type, 35);
+        }
+      }
+      type();
+
+      const stacks = [
+        {
+          name: "HTML",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+          level: 85,
+          color: "#e34c26",
+        },
+        {
+          name: "CSS",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+          level: 80,
+          color: "#264de4",
+        },
+        {
+          name: "JavaScript",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+          level: 70,
+          color: "#f7df1e",
+        },
+        {
+          name: "Python",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+          level: 50,
+          color: "#3572A5",
+        },
+        {
+          name: "Git",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+          level: 75,
+          color: "#f05032",
+        },
+        {
+          name: "GitHub",
+          icon: "https://brand.github.com/_next/static/media/logo-03.cc5e5332.png",
+          level: 75,
+          color: "#6e5494",
+        },
+        {
+          name: "PHP",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+          level: 25,
+          color: "#777BB4",
+        },
+        {
+          name: "Laravel",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+          level: 15,
+          color: "#FF2D20",
+        },
+      ];
+
+      const sg = document.getElementById("stacks-grid");
+
+      sg.innerHTML = stacks
+        .map(
+          (s) => `
   <div class="stack-card">
     <div class="stack-icon">
       <img src="${s.icon}" alt="${s.name} logo" style="width: 40px; height: 40px; object-fit: contain;">
@@ -563,42 +1381,133 @@ sg.innerHTML = stacks.map(s => `
       <div class="stack-level-fill" data-width="${s.level}" style="width:0%; background-color: ${s.color};"></div>
     </div>
   </div>
-`).join('');
+`,
+        )
+        .join("");
 
+      document.getElementById("projects-grid").innerHTML = [
+        {
+          name: "DailyWrite",
+          desc: "My Blog Maker Website Using Laravel",
+          lang: "Blade",
+          color: "#ff3820",
+          url: "https://github.com/Npalzzz/DailyWrite",
+        },
+        {
+          name: "Python-Assignments",
+          desc: "School Assignments",
+          lang: "Python",
+          color: "#3572A5",
+          url: "https://github.com/Npalzzz/Python-Assignments",
+        },
+        {
+          name: "VibeCodingHehe",
+          desc: "Vibe Code Yayyyy",
+          lang: "HTML",
+          color: "#e34c26",
+          url: "https://github.com/Npalzzz/VibeCodingHehe",
+        },
+        {
+          name: "WW2-Quiz-Game",
+          desc: "I Asked Claude to make a Simple WW2 Quiz Game Using Python :)",
+          lang: "Python",
+          color: "#3572A5",
+          url: "https://github.com/Npalzzz/WW2-Quiz-Game",
+        },
+        {
+          name: "WW2-Quiz-Game-HTML-Edition-",
+          desc: "The WW2 Quiz Game I Ever Made Revised Using HTML, CSS, and JS",
+          lang: "HTML",
+          color: "#e34c26",
+          url: "https://github.com/Npalzzz/WW2-Quiz-Game-HTML-Edition-",
+        },
+        {
+          name: "Kalkulator-Sederhana",
+          desc: "Kalkulator Simple yang kubuat karena gaboet",
+          lang: "Python",
+          color: "#3572A5",
+          url: "https://github.com/Npalzzz/Kalkulator-Sederhana",
+        },
+      ]
+        .map(function (r) {
+          return (
+            '<a class="project-card" href="' +
+            r.url +
+            '" target="_blank" rel="noopener">' +
+            '<div class="project-header"><span class="project-name">📁 ' +
+            r.name +
+            '</span><span class="project-arrow">↗</span></div>' +
+            '<p class="project-desc">' +
+            r.desc +
+            "</p>" +
+            '<div class="project-footer"><span class="project-lang"><span class="lang-dot" style="background:' +
+            r.color +
+            '"></span>' +
+            r.lang +
+            "</span></div>" +
+            "</a>"
+          );
+        })
+        .join("");
 
-  document.getElementById('projects-grid').innerHTML = [
-    { name: 'DailyWrite',                  desc: 'My Blog Maker Website Using Laravel',                          lang: 'Blade',  color: '#ff3820', url: 'https://github.com/Npalzzz/DailyWrite' },
-    { name: 'Python-Assignments',            desc: 'School Assignments',                                         lang: 'Python', color: '#3572A5', url: 'https://github.com/Npalzzz/Python-Assignments' },
-    { name: 'VibeCodingHehe',               desc: 'Vibe Code Yayyyy',                                            lang: 'HTML',   color: '#e34c26', url: 'https://github.com/Npalzzz/VibeCodingHehe' },
-    { name: 'WW2-Quiz-Game',                desc: 'I Asked Claude to make a Simple WW2 Quiz Game Using Python :)',  lang: 'Python', color: '#3572A5', url: 'https://github.com/Npalzzz/WW2-Quiz-Game' },
-    { name: 'WW2-Quiz-Game-HTML-Edition-',  desc: 'The WW2 Quiz Game I Ever Made Revised Using HTML, CSS, and JS', lang: 'HTML',   color: '#e34c26', url: 'https://github.com/Npalzzz/WW2-Quiz-Game-HTML-Edition-' },
-    { name: 'Kalkulator-Sederhana',         desc: 'Kalkulator Simple yang kubuat karena gaboet',                  lang: 'Python', color: '#3572A5', url: 'https://github.com/Npalzzz/Kalkulator-Sederhana' },
-  ].map(function(r) {
-    return '<a class="project-card" href="' + r.url + '" target="_blank" rel="noopener">'
-      + '<div class="project-header"><span class="project-name">📁 ' + r.name + '</span><span class="project-arrow">↗</span></div>'
-      + '<p class="project-desc">' + r.desc + '</p>'
-      + '<div class="project-footer"><span class="project-lang"><span class="lang-dot" style="background:' + r.color + '"></span>' + r.lang + '</span></div>'
-      + '</a>';
-  }).join('');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
 
- 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: .12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      const barObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.querySelectorAll(".stack-level-fill").forEach((b) => {
+                b.style.width = b.dataset.width + "%";
+              });
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+      const stacksSection = document.getElementById("stacks");
+      if (stacksSection) barObs.observe(stacksSection);
 
- 
-  const barObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.stack-level-fill').forEach(b => {
-          b.style.width = b.dataset.width + '%';
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      const backdrop = document.getElementById("backdrop");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+        backdrop.classList.toggle("show");
+      });
+
+      backdrop.addEventListener("click", closeMenu);
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href").replace("#", "");
+          closeMenu();
+          setTimeout(() => {
+            const target = document.getElementById(targetId);
+            if (target) target.scrollIntoView({ behavior: "smooth" });
+          }, 350);
         });
+      });
+
+      function closeMenu() {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+        backdrop.classList.remove("show");
       }
-    });
-  }, { threshold: .3 });
-  const stacksSection = document.getElementById('stacks');
-  if (stacksSection) barObs.observe(stacksSection);
-</script>
-</body>
+    </script>
+  </body>
 </html>
