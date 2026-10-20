@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Azka Naufal — Portofolio</title>
+    <title>Azka Naufal — Portfolio</title>
+    <meta name="description" content="Portfolio Azka Naufal, pelajar SMK yang tertarik pada web development, programming, musik metal, dan gaming." />
+    <meta name="theme-color" content="#100b0b" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
@@ -19,16 +21,16 @@
       }
 
       :root {
-        --bg: #0a0e1a;
-        --bg2: #0f1526;
-        --bg3: #161d33;
-        --cyan: #00d4ff;
-        --purple: #6c63ff;
-        --green: #39d98a;
+        --bg: #100b0b;
+        --bg2: #191111;
+        --bg3: #241818;
+        --cyan: #e5484d;
+        --purple: #d4af37;
+        --green: #c99b2e;
         --text: #e8eaf0;
         --muted: #7a8099;
-        --border: rgba(0, 212, 255, 0.12);
-        --glow: 0 0 24px rgba(0, 212, 255, 0.25);
+        --border: rgba(229, 72, 77, 0.12);
+        --glow: 0 0 24px rgba(229, 72, 77, 0.22);
       }
 
       html {
@@ -53,7 +55,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 1.1rem 5vw;
-        background: rgba(10, 14, 26, 0.7);
+        background: rgba(16, 11, 11, 0.82);
         backdrop-filter: blur(16px);
         border-bottom: 1px solid var(--border);
       }
@@ -119,8 +121,8 @@
         inset: 0;
 
         background-image:
-          linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+          linear-gradient(rgba(229, 72, 77, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(229, 72, 77, 0.045) 1px, transparent 1px);
 
         background-size: 48px 48px;
         mask-image: radial-gradient(
@@ -137,7 +139,7 @@
         height: 600px;
         background: radial-gradient(
           circle,
-          rgba(108, 99, 255, 0.18) 0%,
+          rgba(212, 175, 55, 0.16) 0%,
           transparent 70%
         );
         top: 10%;
@@ -150,7 +152,7 @@
         height: 400px;
         background: radial-gradient(
           circle,
-          rgba(0, 212, 255, 0.12) 0%,
+          rgba(229, 72, 77, 0.12) 0%,
           transparent 70%
         );
         bottom: 10%;
@@ -247,11 +249,11 @@
       .btn-primary {
         background: var(--cyan);
         color: var(--bg);
-        box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        box-shadow: 0 0 20px rgba(229, 72, 77, 0.28);
       }
       .btn-primary:hover {
         background: #33ddff;
-        box-shadow: 0 0 32px rgba(0, 212, 255, 0.5);
+        box-shadow: 0 0 32px rgba(229, 72, 77, 0.42);
         transform: translateY(-2px);
       }
       .btn-outline {
@@ -320,7 +322,7 @@
 
       .about-avatar:hover {
         transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 0 40px rgba(108, 99, 255, 0.4);
+        box-shadow: 0 0 40px rgba(212, 175, 55, 0.28);
       }
       .about-avatar img {
         width: 100%;
@@ -334,8 +336,8 @@
         inset: 0;
         background: linear-gradient(
           135deg,
-          rgba(0, 212, 255, 0.06),
-          rgba(108, 99, 255, 0.06)
+          rgba(229, 72, 77, 0.055),
+          rgba(212, 175, 55, 0.055)
         );
         pointer-events: none;
       }
@@ -366,8 +368,8 @@
         border-radius: 20px;
         font-size: 0.78rem;
         font-weight: 500;
-        background: rgba(0, 212, 255, 0.08);
-        border: 1px solid rgba(0, 212, 255, 0.18);
+        background: rgba(229, 72, 77, 0.08);
+        border: 1px solid rgba(229, 72, 77, 0.18);
         color: var(--cyan);
       }
 
@@ -376,7 +378,7 @@
       }
       .hobbies-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
         gap: 1.4rem;
       }
       .hobby-card {
@@ -406,7 +408,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(0, 212, 255, 0.08);
+        background: rgba(229, 72, 77, 0.08);
         border-radius: 14px;
       }
       .hobby-title {
@@ -437,13 +439,13 @@
         border-radius: 20px;
         font-size: 0.78rem;
         font-weight: 500;
-        background: rgba(108, 99, 255, 0.08);
-        border: 1px solid rgba(108, 99, 255, 0.2);
+        background: rgba(212, 175, 55, 0.08);
+        border: 1px solid rgba(212, 175, 55, 0.2);
         color: var(--purple);
       }
       .hobby-tag.game {
-        background: rgba(57, 217, 138, 0.08);
-        border: 1px solid rgba(57, 217, 138, 0.2);
+        background: rgba(212, 175, 55, 0.08);
+        border: 1px solid rgba(212, 175, 55, 0.2);
         color: var(--green);
       }
 
@@ -558,7 +560,7 @@
       }
       .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
         gap: 1.4rem;
       }
       .project-card {
@@ -587,7 +589,7 @@
         transition: opacity 0.25s;
       }
       .project-card:hover {
-        border-color: rgba(0, 212, 255, 0.3);
+        border-color: rgba(229, 72, 77, 0.28);
         transform: translateY(-4px);
       }
       .project-card:hover::before {
@@ -700,7 +702,7 @@
         justify-content: center;
         width: 54px;
         height: 54px;
-        background: rgba(0, 212, 255, 0.08);
+        background: rgba(229, 72, 77, 0.08);
         border-radius: 14px;
         color: var(--cyan);
       }
@@ -778,6 +780,10 @@
         visibility: visible;
       }
 
+      body.menu-open {
+        overflow: hidden;
+      }
+
       @media (max-width: 768px) {
         .hamburger {
           display: flex;
@@ -848,10 +854,133 @@
           transform: translateY(-12px) rotate(-45deg);
         }
       }
+
+      /* Polish pass: accessibility, responsive layouts, and more consistent focus states. */
+      :focus-visible {
+        outline: 2px solid var(--cyan);
+        outline-offset: 4px;
+      }
+
+      section[id] {
+        scroll-margin-top: 84px;
+      }
+
+      .hamburger {
+        padding: 3px;
+        border: 0;
+        background: transparent;
+        appearance: none;
+      }
+
+      .album,
+      .song {
+        text-decoration: none;
+      }
+
+      .album,
+      .song,
+      .game {
+        min-width: 0;
+      }
+
+      .album,
+      .song {
+        overflow-wrap: anywhere;
+      }
+
+      .stack-icon img {
+        display: block;
+      }
+
+      .project-card:focus-visible,
+      .contact-card:focus-visible,
+      .btn:focus-visible,
+      .nav-links a:focus-visible {
+        outline-offset: 5px;
+      }
+
+      .nav-links a[aria-current="location"] {
+        color: var(--cyan);
+      }
+
+      @media (max-width: 600px) {
+        nav {
+          padding: 0.9rem 5vw;
+        }
+
+        #hero {
+          min-height: 88svh;
+          padding-top: 7rem;
+        }
+
+        h1 {
+          letter-spacing: -1px;
+          overflow-wrap: anywhere;
+        }
+
+        .hero-terminal {
+          font-size: 0.92rem;
+          overflow-wrap: anywhere;
+        }
+
+        section {
+          padding: 4.5rem 5vw;
+        }
+
+        .hobbies-grid,
+        .projects-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .hobby-card,
+        .project-card {
+          padding: 1.25rem;
+        }
+
+        .stacks-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.8rem;
+        }
+
+        .stack-card {
+          padding: 1.2rem 0.8rem;
+        }
+
+        .about-avatar {
+          width: min(240px, 70vw);
+          height: min(240px, 70vw);
+        }
+
+        .contact-card {
+          padding: 1.1rem;
+          gap: 0.9rem;
+        }
+
+        .footer-links {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
     </style>
   </head>
   <body>
-    <nav>
+    <nav aria-label="Navigasi utama">
       <div class="nav-logo">azka.dev</div>
 
       <ul class="nav-links" id="navLinks">
@@ -862,11 +991,11 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <div class="hamburger" id="hamburger">
+      <button class="hamburger" id="hamburger" type="button" aria-label="Buka menu navigasi" aria-controls="navLinks" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
     </nav>
 
     <div class="backdrop" id="backdrop"></div>
@@ -877,7 +1006,7 @@
       <div class="hero-glow2"></div>
       <div class="hero-content">
         <div class="hero-eyebrow">Portofolio · 2026</div>
-        <h1>Hello Im <span class="name-highlight">Azka Naufal</span></h1>
+        <h1>Hello, I’m <span class="name-highlight">Azka Naufal</span></h1>
         <div class="hero-terminal" id="typewriter">
           <span class="cursor"></span>
         </div>
@@ -913,7 +1042,9 @@
             <div class="about-avatar">
               <img
                 src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGJ1M3c4cXl2d2hkNHRqdGw3b29xNnI5aDNpcG9keXR0Y21udTE3NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/62lF7PPNddey4/200.webp"
-                alt="Azka's profile picture"
+                alt="Ilustrasi profil Azka"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -987,50 +1118,45 @@
              
               <a class="album" href="https://open.spotify.com/album/2Lq2qX3hYhiuPckC8Flj21" target="_blank" rel="noopener">
                 <span class="album-rank">01</span>
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/736x/d6/b2/f5/d6b2f51510420866f5f652c90ee08ad1.jpg"
-                  alt="Cover album Master of Puppets - Metallica"
+                  src="https://i.pinimg.com/736x/d6/b2/f5/d6b2f51510420866f5f652c90ee08ad1.jpg" alt="Cover album Master of Puppets - Metallica"
                 />
                 Master of Puppets — Metallica
               </a>
 
               <a class="album" href="https://open.spotify.com/album/6jZ1z25PyF4Yd3kHxt9rl1" target="_blank" rel="noopener">
                 <span class="album-rank">02</span>
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/736x/9c/54/c0/9c54c06febe40218fe54c37c02039520.jpg"
-                  alt="Cover album ...And Justice for All - Metallica"
+                  src="https://i.pinimg.com/736x/9c/54/c0/9c54c06febe40218fe54c37c02039520.jpg" alt="Cover album ...And Justice for All - Metallica"
                 />
                 ...And Justice for All — Metallica
               </a>
 
               <a class="album" href="https://open.spotify.com/album/4LdquqwQoyu1pE6Vq8PIha" target="_blank" rel="noopener">
                 <span class="album-rank">03</span>
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/736x/c8/85/65/c885656daa0315ba290d9c4991377537.jpg"
-                  alt="Cover album The Great Southern Trendkill - Pantera"
+                  src="https://i.pinimg.com/736x/c8/85/65/c885656daa0315ba290d9c4991377537.jpg" alt="Cover album The Great Southern Trendkill - Pantera"
                 />
                 The Great Southern Trendkill - Pantera
               </a>
 
               <a class="album" href="https://open.spotify.com/album/5szY4sBOSD6IFjFN1RtWTe" target="_blank" rel="noopener">
                 <span class="album-rank">04</span>
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/1200x/53/f9/87/53f987c2bdd03c2372474f39d65ad99b.jpg"
-                  alt="Cover album Cowboys From Hell - Pantera"
+                  src="https://i.pinimg.com/1200x/53/f9/87/53f987c2bdd03c2372474f39d65ad99b.jpg" alt="Cover album Cowboys From Hell - Pantera"
                 />
                 Cowboys From Hell — Pantera
               </a>
 
               <a class="album" href="https://open.spotify.com/album/1CtTTpKbHU8KbHRB4LmBbv" target="_blank" rel="noopener">
                 <span class="album-rank">05</span>
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/1200x/46/a5/ea/46a5ea6aa6a305465a65c33c9bad03ec.jpg"
-                  alt="Cover album Mutter - Rammstein"
+                  src="https://i.pinimg.com/1200x/46/a5/ea/46a5ea6aa6a305465a65c33c9bad03ec.jpg" alt="Cover album Mutter - Rammstein"
                 />
                 Mutter — Rammstein
               </a>
@@ -1040,46 +1166,41 @@
               <h3>🔥 Top Tracks</h3>
 
               <a class="song" href="https://open.spotify.com/track/055Oi1gpZYQ3mVC5aOntx7" target="_blank" rel="noopener">
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/736x/c8/85/65/c885656daa0315ba290d9c4991377537.jpg"
-                  alt="Cover lagu The Great Southern Trendkill - Pantera"
+                  src="https://i.pinimg.com/736x/c8/85/65/c885656daa0315ba290d9c4991377537.jpg" alt="Cover lagu The Great Southern Trendkill - Pantera"
                 />
                 The Great Southern Trendkill
               </a>
 
               <a class="song" href="https://open.spotify.com/track/5SAEMjVQbmin3g7b0RG6me" target="_blank" rel="noopener">
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/736x/a7/7c/42/a77c42396086fd96f89eb9e33662301c.jpg"
-                  alt="Cover lagu 5 Minutes Alone - Pantera"
+                  src="https://i.pinimg.com/736x/a7/7c/42/a77c42396086fd96f89eb9e33662301c.jpg" alt="Cover lagu 5 Minutes Alone - Pantera"
                 />
                 5 Minutes Alone
               </a>
 
               <a class="song" href="https://open.spotify.com/track/4tPHBRIPsB55nssjvKDbjj" target="_blank" rel="noopener">
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/736x/d6/b2/f5/d6b2f51510420866f5f652c90ee08ad1.jpg"
-                  alt="Cover lagu Disposable Heroes - Metallica"
+                  src="https://i.pinimg.com/736x/d6/b2/f5/d6b2f51510420866f5f652c90ee08ad1.jpg" alt="Cover lagu Disposable Heroes - Metallica"
                 />
                 Disposable Heroes
               </a>
 
               <a class="song" href="https://open.spotify.com/track/1L2ZkXbRX00ZiaUDuMMgf7" target="_blank" rel="noopener">
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/736x/c8/85/65/c885656daa0315ba290d9c4991377537.jpg"
-                  alt="Cover lagu Floods - Pantera"
+                  src="https://i.pinimg.com/736x/c8/85/65/c885656daa0315ba290d9c4991377537.jpg" alt="Cover lagu Floods - Pantera"
                 />
                 Floods
               </a>
 
               <a class="song" href="https://open.spotify.com/track/5ArNGisLzrNOIVwWajRRdt" target="_blank" rel="noopener">
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/1200x/46/a5/ea/46a5ea6aa6a305465a65c33c9bad03ec.jpg"
-                  alt="Cover lagu Mein Herz Brennt - Rammstein"
+                  src="https://i.pinimg.com/1200x/46/a5/ea/46a5ea6aa6a305465a65c33c9bad03ec.jpg" alt="Cover lagu Mein Herz Brennt - Rammstein"
                 />
                 Mein Herz Brennt
               </a>
@@ -1101,46 +1222,41 @@
             <div class="favorite-games">
              
               <div class="game">
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/1200x/72/2c/9f/722c9f56f68a619d2d94a55abb8f3631.jpg"
-                  alt="Cover game Payday 2"
+                  src="https://i.pinimg.com/1200x/72/2c/9f/722c9f56f68a619d2d94a55abb8f3631.jpg" alt="Cover game Payday 2"
                 />
                 Payday 2
               </div>
 
               <div class="game">
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/1200x/70/19/bd/7019bd44087eef342afb543287e52aea.jpg"
-                  alt="Cover game Ready or Not"
+                  src="https://i.pinimg.com/1200x/70/19/bd/7019bd44087eef342afb543287e52aea.jpg" alt="Cover game Ready or Not"
                 />
                 Ready or Not
               </div>
 
               <div class="game">
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/1200x/d2/55/ac/d255ac78bb40edc96076bb4c22a32504.jpg"
-                  alt="Cover game GTA Series"
+                  src="https://i.pinimg.com/1200x/d2/55/ac/d255ac78bb40edc96076bb4c22a32504.jpg" alt="Cover game GTA Series"
                 />
                 GTA Series
               </div>
 
               <div class="game">
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/1200x/76/0f/51/760f5161e51b3f697e448968e9b01cb3.jpg"
-                  alt="Cover game Metal Gear Solid V: The Phantom Pain"
+                  src="https://i.pinimg.com/1200x/76/0f/51/760f5161e51b3f697e448968e9b01cb3.jpg" alt="Cover game Metal Gear Solid V: The Phantom Pain"
                 />
                 Metal Gear Solid V: The Phantom Pain
               </div>
 
               <div class="game">
-                <img
+                <img loading="lazy" decoding="async"
                   class="cover-thumb"
-                  src="https://i.pinimg.com/736x/b6/f4/2a/b6f42a199afddb797150104841ae31b4.jpg"
-                  alt="Cover game Roblox"
+                  src="https://i.pinimg.com/736x/b6/f4/2a/b6f42a199afddb797150104841ae31b4.jpg" alt="Cover game Roblox"
                 />
                 Roblox
               </div>
@@ -1180,7 +1296,7 @@
         <div class="section-label">Work</div>
         <h2 class="section-title">Projects</h2>
         <p class="section-sub">
-          Langsung dari GitHub — hasil eksperimen dan belajarku.
+          Kumpulan proyek, eksperimen, dan hasil belajarku. Klik kartu untuk melihat source code di GitHub.
         </p>
         <div class="projects-grid" id="projects-grid">
           <div class="project-loading">⟳ Mengambil data dari GitHub...</div>
@@ -1273,7 +1389,7 @@
       </span>
 
       <div class="footer-links">
-        <a href="https://github.com/Npalzzz" target="_blank">GitHub</a>
+        <a href="https://github.com/Npalzzz" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="mailto:azkanaufal750@gmail.com">Email</a>
       </div>
     </footer>
@@ -1285,36 +1401,54 @@
         "SMK Student & Self-learner 📚",
         "Building cool things 🔨",
       ];
-      let pi = 0,
-        ci = 0,
-        deleting = false;
-      const el = document.getElementById("typewriter");
+
+      const typewriter = document.getElementById("typewriter");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+      let typeTimer;
+
+      function renderTypewriter(text) {
+        typewriter.textContent = text;
+        const cursor = document.createElement("span");
+        cursor.className = "cursor";
+        cursor.setAttribute("aria-hidden", "true");
+        typewriter.appendChild(cursor);
+      }
+
       function type() {
-        const phrase = phrases[pi];
+        const phrase = phrases[phraseIndex];
+
         if (!deleting) {
-          el.innerHTML =
-            phrase.slice(0, ci + 1) + '<span class="cursor"></span>';
-          ci++;
-          if (ci === phrase.length) {
+          charIndex += 1;
+          renderTypewriter(phrase.slice(0, charIndex));
+
+          if (charIndex >= phrase.length) {
             deleting = true;
-            setTimeout(type, 1800);
+            typeTimer = setTimeout(type, 1600);
             return;
           }
-          setTimeout(type, 65);
+          typeTimer = setTimeout(type, 60);
         } else {
-          el.innerHTML =
-            phrase.slice(0, ci - 1) + '<span class="cursor"></span>';
-          ci--;
-          if (ci === 0) {
+          charIndex -= 1;
+          renderTypewriter(phrase.slice(0, charIndex));
+
+          if (charIndex <= 0) {
             deleting = false;
-            pi = (pi + 1) % phrases.length;
-            setTimeout(type, 300);
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typeTimer = setTimeout(type, 300);
             return;
           }
-          setTimeout(type, 35);
+          typeTimer = setTimeout(type, 30);
         }
       }
-      type();
+
+      if (reducedMotion) {
+        renderTypewriter(phrases[0]);
+      } else {
+        type();
+      }
 
       const stacks = [
         {
@@ -1374,7 +1508,7 @@
           (s) => `
   <div class="stack-card">
     <div class="stack-icon">
-      <img src="${s.icon}" alt="${s.name} logo" style="width: 40px; height: 40px; object-fit: contain;">
+      <img loading="lazy" decoding="async" src="${s.icon}" alt="${s.name} logo" style="width: 40px; height: 40px; object-fit: contain;">
     </div>
     <div class="stack-name">${s.name}</div>
     <div class="stack-level">
@@ -1385,7 +1519,7 @@
         )
         .join("");
 
-      document.getElementById("projects-grid").innerHTML = [
+      const projects = [
         {
           name: "DailyWrite",
           desc: "My Blog Maker Website Using Laravel",
@@ -1395,119 +1529,161 @@
         },
         {
           name: "My Landing Page",
-          desc: "A Landing Page Containing My Profile :3 (This Landing Page LMAO)",
+          desc: "A landing page containing my profile — this website.",
           lang: "HTML",
           color: "#e34c26",
           url: "https://github.com/Npalzzz/My-Landing-Page",
         },
         {
           name: "TaskFlow",
-          desc: "TaskFlow is a web-based task management system that helps users organize, manage, and track daily tasks efficiently. Built as a Pra-UKK project using Laravel, Node.JS, Tailwind, and Object-Oriented Programming. (WIP)",
+          desc: "A web-based task management system for organizing, managing, and tracking daily tasks. Built as a Pra-UKK project with Laravel, Node.js, Tailwind, and OOP. (WIP)",
           lang: "Blade",
           color: "#ff3820",
           url: "https://github.com/Npalzzz/TaskFlow",
         },
         {
-         name: "WW2-Quiz-Game-HTML-Edition-",
-          desc: "The WW2 Quiz Game I Ever Made Revised Using HTML, CSS, and JS",
+          name: "WW2 Quiz Game — HTML Edition",
+          desc: "A revised version of my WW2 quiz game, built with HTML, CSS, and JavaScript.",
           lang: "HTML",
           color: "#e34c26",
           url: "https://github.com/Npalzzz/WW2-Quiz-Game-HTML-Edition-",
         },
         {
           name: "School Assignment",
-          desc: "School Assignments",
+          desc: "A collection of Python school assignments and practice exercises.",
           lang: "Python",
           color: "#3572A5",
           url: "https://github.com/Npalzzz/Python-Assignments",
         },
         {
-          name: "Kalkulator-Sederhana",
-          desc: "Kalkulator Simple yang kubuat karena gaboet",
+          name: "Kalkulator Sederhana",
+          desc: "A simple calculator project I made while experimenting with Python.",
           lang: "Python",
           color: "#3572A5",
           url: "https://github.com/Npalzzz/Kalkulator-Sederhana",
         },
-      ]
-        .map(function (r) {
-          return (
-            '<a class="project-card" href="' +
-            r.url +
-            '" target="_blank" rel="noopener">' +
-            '<div class="project-header"><span class="project-name">📁 ' +
-            r.name +
-            '</span><span class="project-arrow">↗</span></div>' +
-            '<p class="project-desc">' +
-            r.desc +
-            "</p>" +
-            '<div class="project-footer"><span class="project-lang"><span class="lang-dot" style="background:' +
-            r.color +
-            '"></span>' +
-            r.lang +
-            "</span></div>" +
-            "</a>"
-          );
-        })
-        .join("");
+      ];
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
+      const projectsGrid = document.getElementById("projects-grid");
+      projectsGrid.replaceChildren();
+
+      projects.forEach((project) => {
+        const card = document.createElement("a");
+        card.className = "project-card";
+        card.href = project.url;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+
+        const header = document.createElement("div");
+        header.className = "project-header";
+
+        const name = document.createElement("span");
+        name.className = "project-name";
+        name.textContent = `📁 ${project.name}`;
+
+        const arrow = document.createElement("span");
+        arrow.className = "project-arrow";
+        arrow.setAttribute("aria-hidden", "true");
+        arrow.textContent = "↗";
+
+        const description = document.createElement("p");
+        description.className = "project-desc";
+        description.textContent = project.desc;
+
+        const footer = document.createElement("div");
+        footer.className = "project-footer";
+
+        const language = document.createElement("span");
+        language.className = "project-lang";
+
+        const dot = document.createElement("span");
+        dot.className = "lang-dot";
+        dot.style.backgroundColor = project.color;
+
+        language.append(dot, document.createTextNode(project.lang));
+        header.append(name, arrow);
+        footer.append(language);
+        card.append(header, description, footer);
+        projectsGrid.append(card);
+      });
+
+      const revealElements = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
             }
           });
-        },
-        { threshold: 0.12 },
-      );
-      document
-        .querySelectorAll(".reveal")
-        .forEach((el) => observer.observe(el));
+        }, { threshold: 0.12 });
 
-      const barObs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.querySelectorAll(".stack-level-fill").forEach((b) => {
-                b.style.width = b.dataset.width + "%";
+        revealElements.forEach((element) => revealObserver.observe(element));
+
+        const stacksSection = document.getElementById("stacks");
+        const barObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.querySelectorAll(".stack-level-fill").forEach((bar) => {
+                bar.style.width = `${bar.dataset.width}%`;
               });
+              observer.unobserve(entry.target);
             }
           });
-        },
-        { threshold: 0.3 },
-      );
-      const stacksSection = document.getElementById("stacks");
-      if (stacksSection) barObs.observe(stacksSection);
+        }, { threshold: 0.3 });
+
+        if (stacksSection) barObserver.observe(stacksSection);
+      } else {
+        revealElements.forEach((element) => element.classList.add("visible"));
+        document.querySelectorAll(".stack-level-fill").forEach((bar) => {
+          bar.style.width = `${bar.dataset.width}%`;
+        });
+      }
 
       const hamburger = document.getElementById("hamburger");
       const navLinks = document.getElementById("navLinks");
       const backdrop = document.getElementById("backdrop");
 
+      function closeMenu() {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+        backdrop.classList.remove("show");
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.setAttribute("aria-label", "Buka menu navigasi");
+        document.body.classList.remove("menu-open");
+      }
+
+      function openMenu() {
+        hamburger.classList.add("active");
+        navLinks.classList.add("active");
+        backdrop.classList.add("show");
+        hamburger.setAttribute("aria-expanded", "true");
+        hamburger.setAttribute("aria-label", "Tutup menu navigasi");
+        document.body.classList.add("menu-open");
+      }
+
       hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navLinks.classList.toggle("active");
-        backdrop.classList.toggle("show");
+        navLinks.classList.contains("active") ? closeMenu() : openMenu();
       });
 
       backdrop.addEventListener("click", closeMenu);
 
       document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href").replace("#", "");
+        link.addEventListener("click", () => {
           closeMenu();
-          setTimeout(() => {
-            const target = document.getElementById(targetId);
-            if (target) target.scrollIntoView({ behavior: "smooth" });
-          }, 350);
+          const target = document.querySelector(link.getAttribute("href"));
+          if (target) target.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
         });
       });
 
-      function closeMenu() {
-        hamburger.classList.remove("active");
-        navLinks.classList.remove("active");
-        backdrop.classList.remove("show");
-      }
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) closeMenu();
+      });
+
     </script>
   </body>
 </html>
